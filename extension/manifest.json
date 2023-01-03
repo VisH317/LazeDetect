@@ -1,0 +1,30 @@
+{
+    "manifest_version": 3,
+    "name": "Sitting Detector",
+    "description": "Closes all tabs so you don't become fatshaan",
+    "version": "0.0.1",
+    "background": {
+        "service_worker": "background.js",
+        "type": "module"
+    },
+    "content_scripts": [
+        {
+            "matches": ["*://*/*"],
+            "js": ["content-script.js"]
+        }
+    ],
+    "permissions": [
+        "tabs",
+        "storage",
+        "scripting",
+        "activeTab"
+    ],
+    "action": {
+        "browser_style": true,
+        "default_title": "Actual FISH",
+        "default_popup": "popup.html"
+    },
+    "host_permissions": [
+        "chrome-extension://*"
+    ]
+}
